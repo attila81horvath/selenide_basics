@@ -5,7 +5,6 @@ import static WebObjects.LoginObjects.ErrorMessage;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
 public class Messages {
-
     public static void LoginMessageResponse(final String Message) {
         ErrorMessage()
                 .parent()

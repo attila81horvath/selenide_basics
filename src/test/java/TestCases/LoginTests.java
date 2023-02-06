@@ -5,7 +5,6 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import static Actions.BasicActions.*;
 import static Configuration.BrowserSettings.SetSettingsOfChrome;
-
 public class LoginTests {
 
     @BeforeAll

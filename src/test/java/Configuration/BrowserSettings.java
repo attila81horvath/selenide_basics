@@ -1,9 +1,8 @@
 package Configuration;
+
 import com.codeborne.selenide.Configuration;
 import static com.codeborne.selenide.WebDriverRunner.isChrome;
-
 public class BrowserSettings {
-
     public static void SetSettingsOfChrome() {
         Configuration.browser = "chrome";
         Configuration.browserSize = "1920x1080";

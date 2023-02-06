@@ -11,7 +11,6 @@ import static Validators.Messages.*;
 import static org.testng.Assert.assertTrue;
 import static org.testng.AssertJUnit.assertEquals;
 import static org.testng.AssertJUnit.assertFalse;
-
 public class BasicActions {
 
     public static void ActionToOpenLoginPage() {
