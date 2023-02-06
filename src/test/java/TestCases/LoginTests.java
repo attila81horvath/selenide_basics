@@ -17,7 +17,6 @@ public class LoginTests {
     public void LoginAsStandardUserAndItWorks() {
         ActionToOpenLoginPage();
         ActionToLoginAsStandardUser();
-        ActionToValidateThatUserIsLoggedIn();
     }
 
     @Test
@@ -25,6 +24,6 @@ public class LoginTests {
     public void LoginAsLockedUserAndItIsLocked() {
         ActionToOpenLoginPage();
         ActionToLoginAsLockedUser();
-        ActionToValidateThatUserIsLocked();
+        ActionToCheckLoginResponse();
     }
 }

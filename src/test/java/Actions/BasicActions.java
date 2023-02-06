@@ -1,5 +1,6 @@
 package Actions;
 
+import Modules.LoginMessageModule;
 import Modules.LoginModule;
 import com.codeborne.selenide.WebDriverRunner;
 import static TestData.Urls.*;
@@ -18,7 +19,7 @@ public class BasicActions {
         open(STARTURL);
 
         // ACT
-        String currentUrl = WebDriverRunner.url();
+        final String currentUrl = WebDriverRunner.url();
 
         // ASSERT
         assertEquals(STARTURL, currentUrl);
@@ -35,10 +36,6 @@ public class BasicActions {
         assertTrue(loginModule.isSuccessful());
     }
 
-    public static void ActionToValidateThatUserIsLoggedIn() {
-        BurgerMenuIsAvailable();
-    }
-
     public static void ActionToLoginAsLockedUser() {
         // ARRANGE
         LoginModule loginModule = new LoginModule(LOCKEDUSERNAME, PASSWORD);
@@ -50,7 +47,14 @@ public class BasicActions {
         assertFalse(loginModule.isSuccessful());
     }
 
-    public static void ActionToValidateThatUserIsLocked() {
-        LoginMessageResponse(LOCKEDUSERERRORMESSAGE);
+    public static void ActionToCheckLoginResponse() {
+        // ARRANGE
+        LoginMessageModule loginMessageModule = new LoginMessageModule(LOCKEDUSERERRORMESSAGE);
+
+        // ACT
+        loginMessageModule.CheckResponseMessage();
+
+        // ASSERT
+        assertEquals(LOCKEDUSERERRORMESSAGE, loginMessageModule.ValidateText());
     }
 }
