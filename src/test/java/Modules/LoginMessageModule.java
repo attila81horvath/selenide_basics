@@ -1,5 +1,7 @@
 package Modules;
 
+import com.codeborne.selenide.SelenideElement;
+
 import java.time.Duration;
 import static WebObjects.LoginObjects.ErrorMessage;
 import static com.codeborne.selenide.Condition.text;
@@ -12,16 +14,15 @@ public class LoginMessageModule {
         _message = message;
     }
 
-    public void CheckResponseMessage() {
+    public void CheckResponseMessageIsVisible() {
         ErrorMessage()
                 .parent()
-                .shouldBe(visible, Duration.ofSeconds(2))
-                .shouldHave(text(_message));
+                .shouldBe(visible, Duration.ofSeconds(2));
     }
 
-    public String ValidateText() {
+    public SelenideElement CheckResponseText() {
         return  ErrorMessage()
                 .parent()
-                .getText();
+                .shouldHave(text(_message));
     }
 }

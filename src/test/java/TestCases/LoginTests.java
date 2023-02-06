@@ -24,6 +24,6 @@ public class LoginTests {
     public void LoginAsLockedUserAndItIsLocked() {
         ActionToOpenLoginPage();
         ActionToLoginAsLockedUser();
-        ActionToCheckLoginResponse();
+        ActionToCheckLockedUserResponse();
     }
 }

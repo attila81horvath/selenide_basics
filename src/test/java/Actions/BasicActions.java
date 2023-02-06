@@ -6,9 +6,7 @@ import com.codeborne.selenide.WebDriverRunner;
 import static TestData.Urls.*;
 import static TestData.Accounts.*;
 import static TestData.Messages.*;
-import static Validators.ShopItems.BurgerMenuIsAvailable;
 import static com.codeborne.selenide.Selenide.open;
-import static Validators.Messages.*;
 import static org.testng.Assert.assertTrue;
 import static org.testng.AssertJUnit.assertEquals;
 import static org.testng.AssertJUnit.assertFalse;
@@ -47,14 +45,16 @@ public class BasicActions {
         assertFalse(loginModule.isSuccessful());
     }
 
-    public static void ActionToCheckLoginResponse() {
+    public static void ActionToCheckLockedUserResponse() {
         // ARRANGE
         LoginMessageModule loginMessageModule = new LoginMessageModule(LOCKEDUSERERRORMESSAGE);
 
         // ACT
-        loginMessageModule.CheckResponseMessage();
+        loginMessageModule.CheckResponseMessageIsVisible();
 
         // ASSERT
-        assertEquals(LOCKEDUSERERRORMESSAGE, loginMessageModule.ValidateText());
+        assertTrue(loginMessageModule
+                        .CheckResponseText()
+                        .exists());
     }
 }

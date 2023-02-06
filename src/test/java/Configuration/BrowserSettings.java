@@ -8,7 +8,7 @@ public class BrowserSettings {
         Configuration.browserSize = "1920x1080";
         Configuration.timeout = 8000;
         Configuration.fastSetValue = false;
-        Configuration.holdBrowserOpen = true;
+        Configuration.holdBrowserOpen = false;
         Configuration.headless = false;
         System.out.println("Is Chrome? "+ isChrome());
     }
