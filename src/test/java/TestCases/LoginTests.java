@@ -26,4 +26,11 @@ public class LoginTests {
         ActionToLoginAsLockedUser();
         ActionToCheckLockedUserResponse();
     }
+
+    @Test
+    @Description("Login as problem user and it shows problem.")
+    public void LoginAsProblemUserAndItShowsProblem() {
+        ActionToOpenLoginPage();
+        ActionToLoginAsStandardUser();
+    }
 }

@@ -57,4 +57,15 @@ public class BasicActions {
                         .CheckResponseText()
                         .exists());
     }
+
+    public static void ActionToLoginAsProblemUser() {
+        // ARRANGE
+        LoginModule loginModule = new LoginModule(PROBLEMUSERNAME, PASSWORD);
+
+        // ACT
+        loginModule.Login();
+
+        // ASSERT
+        assertTrue(loginModule.isSuccessful());
+    }
 }
