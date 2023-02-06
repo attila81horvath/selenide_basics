@@ -25,4 +25,7 @@ public class LoginModule {
                 .shouldBe(visible)
                 .click();
     }
+    public Boolean isSuccessful() {
+        return !(LoginButton().exists());
+    }
 }
